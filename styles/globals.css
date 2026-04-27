@@ -1,26 +1,1399 @@
-@import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;600&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+
+
+/* Local Helvetica Neue Font Family */
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueUltraLight.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueThin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueRoman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueHeavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italic versions */
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueUltraLightItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueThinItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueLightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueMediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueHeavyItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  src: url('/font/HelveticaNeueBlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Helvetica Neue, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.navbar-item:hover .navbar-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.hover-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrolling animation for partner logos */
+@keyframes scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 60s linear infinite;
+  width: 200%;
+}
+
+/* Slow scrolling animation for success stories */
+@keyframes scroll-slow {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-slow {
+  animation: scroll-slow 60s linear infinite;
+  width: 200%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  position: relative;
+  isolation: isolate;
+  contain: layout style paint;
+}
+
+/* Slower animation for mobile to see all stories */
+@media (max-width: 768px) {
+  .animate-scroll-slow {
+    animation: scroll-slow 80s linear infinite;
+  }
+}
+
+/* Pause animation on hover */
+.animate-scroll-slow:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hide scrollbar completely */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s ease-out;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* WhatsApp CTA Animation */
+.whatsapp-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 220px;
+  transition: max-width 0.6s ease, opacity 0.6s ease;
+  animation: fadeOutText 0.8s ease-in-out 5s forwards;
+}
+
+.whatsapp-button {
+  animation: collapseButton 0.8s ease-in-out 5s forwards;
+  height: 44px;
+  /* larger button height */
+  max-width: 16rem;
+  /* allow a bit wider expansion */
+  border-radius: 22px;
+  /* pill */
+  overflow: hidden;
+  /* prevent contents from overflowing */
+}
+
+.whatsapp-icon {
+  animation: centerIcon 0.8s ease-in-out 5s forwards;
+  transition: transform 0.6s ease;
+}
+
+@keyframes fadeOutText {
+  0% {
+    opacity: 1;
+    max-width: 220px;
+  }
+
+  100% {
+    opacity: 0;
+    max-width: 0;
+  }
+}
+
+@keyframes collapseButton {
+  0% {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    justify-content: flex-start;
+  }
+
+  100% {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 72px;
+    /* collapsed width bigger */
+    height: 44px;
+    /* collapsed height bigger */
+    justify-content: center;
+    border-radius: 22px;
+    /* fully rounded pill */
+  }
+}
+
+/* Show text again on hover */
+.group:hover .whatsapp-text {
+  animation: fadeInText 0.6s ease-in-out forwards;
+}
+
+.group:hover .whatsapp-button {
+  animation: expandButton 0.6s ease-in-out forwards;
+}
+
+.group:hover .whatsapp-icon {
+  animation: resetIcon 0.6s ease-in-out forwards;
+}
+
+@keyframes expandButton {
+  0% {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 72px;
+    height: 44px;
+    justify-content: center;
+  }
+
+  100% {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: auto;
+    /* constrained by max-width above */
+    height: 44px;
+    /* consistent height */
+    justify-content: flex-start;
+  }
+}
+
+@keyframes resetIcon {
+  0% {
+    transform: translateX(6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    max-width: 0;
+  }
+
+  100% {
+    opacity: 1;
+    max-width: 220px;
+  }
+}
+
+@keyframes centerIcon {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE FIXES
+   Desktop UI remains unchanged
+   ======================================== */
+
+/* Mobile: Prevent horizontal overflow */
+@media (max-width: 768px) {
+
+  body,
+  html {
+    overflow-x: hidden !important;
+    width: 100%;
+  }
+
+  * {
+    max-width: 100vw;
+  }
+
+  /* Hero Section Mobile Fixes - Full Width */
+  .relative[style*="height: 70vh"] {
+    height: 70vh !important;
+    min-height: 70vh !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Improve hero image clarity */
+  .relative[style*="height: 70vh"] img {
+    opacity: 1 !important;
+  }
+
+  .relative[style*="height: 70vh"] .bg-gradient-to-t {
+    opacity: 0.3 !important;
+  }
+
+  /* Mobile responsive fixes for hero sections */
+
+  /* Hero section content containers - Full Width */
+  .relative.max-w-7xl.mx-auto.px-4 {
+    padding: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    text-align: center !important;
+    gap: 0.75rem !important;
+    position: relative !important;
+    z-index: 20 !important;
+  }
+
+  /* Fix Hero Section 1 main container */
+  section .relative.max-w-7xl.mx-auto.px-4.sm\\:px-6.lg\\:px-8 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    padding: 1rem !important;
+  }
+
+  /* Mobile responsive fixes for hero sections */
+
+  /* Hero section spacing adjustments */
+  section .text-center.mb-12 {
+    margin-bottom: 1rem !important;
+  }
+
+  section .text-center.mb-3 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  section .text-center.mb-6 {
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Hero section logo and community text spacing */
+  section .flex.items-center.justify-center.gap-2 {
+    gap: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Hero section logo sizing */
+  section img[alt*="ABWCI Logo"] {
+    max-width: 60px !important;
+    height: auto !important;
+  }
+
+  /* Hero section community text */
+  div[style*="width: '173px'"] {
+    width: auto !important;
+    font-size: clamp(12px, 3vw, 18px) !important;
+  }
+
+  /* Hero section separator */
+  div[style*="width: '9px'"] {
+    font-size: clamp(16px, 3vw, 22px) !important;
+  }
+
+  /* Make partner logos section more compact on mobile */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  /* Partner logos sizing */
+  .flex-shrink-0.w-16.h-10 {
+    width: 3rem !important;
+    height: 2rem !important;
+  }
+
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Key Updates Section Mobile */
+  section .flex.gap-8 {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  /* Key Updates title */
+  h2[style*="fontSize: '50px'"] {
+    font-size: clamp(24px, 6vw, 36px) !important;
+    line-height: clamp(28px, 7vw, 42px) !important;
+  }
+
+  /* Key Updates subtitle */
+  p[style*="fontSize: '18px'"] {
+    font-size: clamp(14px, 3vw, 16px) !important;
+    line-height: clamp(20px, 4vw, 22px) !important;
+  }
+
+  /* Announcements box width on mobile */
+  div[class*="w-[28rem]"] {
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: 0 !important;
+  }
+
+  /* Announcements box height */
+  .h-\[28rem\] {
+    height: 24rem !important;
+  }
+
+  /* Who We Are Section Mobile */
+  div[style*="linear-gradient(90deg, #4F287B"] {
+    padding: 1.5rem !important;
+    margin: 0 1rem !important;
+  }
+
+  /* Who We Are title */
+  h2[style*="fontSize: '56px'"] {
+    font-size: clamp(24px, 6vw, 36px) !important;
+    line-height: clamp(28px, 7vw, 42px) !important;
+  }
+
+  /* Who We Are description */
+  p[style*="fontSize: '18px'"] {
+    font-size: clamp(14px, 3vw, 16px) !important;
+    line-height: clamp(20px, 4vw, 22px) !important;
+  }
+
+  /* Vision/Mission columns */
+  .flex.flex-col.md\\:flex-row.gap-8 {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding-left: 0 !important;
+  }
+
+  /* Key Features Section Mobile */
+  .grid.grid-cols-1.md\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Key Features title */
+  h2[style*="fontSize: '42px'"] {
+    font-size: clamp(24px, 6vw, 32px) !important;
+    line-height: clamp(28px, 7vw, 38px) !important;
+  }
+
+  /* Key Features cards */
+  .relative.rounded-2xl.overflow-hidden.h-72 {
+    height: 16rem !important;
+  }
+
+  /* Floating modal for mobile */
+  div[style*="width: 817px"] {
+    width: 95vw !important;
+    max-width: 95vw !important;
+    height: auto !important;
+    min-height: 400px !important;
+    margin: 1rem !important;
+  }
+
+  /* One Platform Section Mobile */
+  .grid.grid-cols-1.lg\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* One Platform title */
+  h2[style*="fontSize: '50px'"] {
+    font-size: clamp(24px, 6vw, 36px) !important;
+    line-height: clamp(28px, 7vw, 42px) !important;
+  }
+
+  /* One Platform description */
+  p[style*="fontSize: '18px'"] {
+    font-size: clamp(14px, 3vw, 16px) !important;
+    line-height: clamp(20px, 4vw, 22px) !important;
+  }
+
+  /* Features list mobile */
+  .space-y-6 {
+    gap: 1.5rem !important;
+  }
+
+  /* Success Stories Mobile */
+  .flex-shrink-0.w-96 {
+    width: 18rem !important;
+  }
+
+  /* SDGs Section Mobile */
+  .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* SDGs cards */
+  .w-56.h-56 {
+    width: 8rem !important;
+    height: 8rem !important;
+  }
+
+  /* FAQ Section Mobile */
+  h3[style*="fontSize: '50px'"] {
+    font-size: clamp(18px, 4vw, 24px) !important;
+    line-height: clamp(22px, 5vw, 28px) !important;
+  }
+
+  /* Global Presence Mobile */
+  .flex.flex-col.lg\\:flex-row {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+  }
+
+  /* World map mobile */
+  .relative.w-full.h-96 {
+    height: 16rem !important;
+  }
+
+  /* Adjust absolute positioned content */
+  div[class*="absolute"][style*="width:"] {
+    position: relative !important;
+    width: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Mobile-specific spacing adjustments */
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .py-16 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .py-10 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .py-6 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Mobile margins */
+  .mb-16 {
+    margin-bottom: 2rem !important;
+  }
+
+  .mb-12 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .mb-8 {
+    margin-bottom: 1rem !important;
+  }
+
+  .mb-6 {
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Mobile touch targets */
+  button,
+  a {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* Mobile-specific button adjustments */
+  .bg-\[#fecb07\] {
+    padding: 0.75rem 1.5rem !important;
+    font-size: clamp(14px, 2.5vw, 16px) !important;
+  }
+
+  /* Mobile navigation improvements */
+  .text-white.px-3.py-2 {
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* Navbar mobile fixes */
+  nav.relative.z-50.group {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  /* Hide desktop navigation on mobile */
+  .md\\:flex.items-center.justify-center.flex-1 {
+    display: none !important;
+  }
+
+  /* Hide login/register section on mobile navbar - but keep logo */
+  .flex.items-center .ml-6 {
+    display: none !important;
+  }
+
+  /* Ensure logo container is visible on mobile */
+  .flex.items-center.ml-1.sm\\:ml-2.md\\:ml-3.lg\\:ml-4 {
+    display: flex !important;
+  }
+
+  /* Ensure logo image is visible on mobile */
+  .flex.items-center.ml-1 img {
+    display: block !important;
+  }
+
+  /* Ensure logo link is visible on mobile */
+  .flex.items-center.ml-1 a {
+    display: flex !important;
+  }
+
+  /* Ensure logo container div is visible on mobile */
+  .flex.items-center.ml-1 .relative.flex.items-center {
+    display: flex !important;
+  }
+
+  /* Navbar height adjustments */
+  .flex.justify-between.items-center.h-12 {
+    height: 3rem !important;
+  }
+
+  /* Navbar logo sizing */
+  .w-12.h-8 {
+    width: 2.5rem !important;
+    height: 1.5rem !important;
+  }
+
+  /* Mobile layout container - ensure proper flex layout */
+  .flex.items-center.justify-between.w-full.md\\:hidden {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Mobile logo - force to left */
+  .flex.items-center.justify-between.w-full.md\\:hidden>div:first-child {
+    order: 1 !important;
+    margin-right: auto !important;
+  }
+
+  /* Mobile hamburger menu - force to right */
+  .flex.items-center.justify-between.w-full.md\\:hidden>div:last-child {
+    order: 2 !important;
+    margin-left: auto !important;
+  }
+
+  /* Hide language button on mobile navbar */
+  .ml-6 {
+    display: none !important;
+  }
+
+  /* Mobile menu styling - Ultra Compact */
+  .md\\:hidden.bg-white.shadow-lg.border-t {
+    margin-top: 3rem !important;
+    border-top: 1px solid #e5e7eb !important;
+    max-height: 60vh !important;
+  }
+
+
+  /* Force minimal spacing on all mobile menu elements */
+  .md\\:hidden div {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .md\\:hidden h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .md\\:hidden a {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Override all spacing classes */
+  .md\\:hidden .space-y-1>*+* {
+    margin-top: 0.25rem !important;
+  }
+
+  .md\\:hidden .space-y-0>*+* {
+    margin-top: 0 !important;
+  }
+
+
+  /* Mobile dropdown items - Override all spacing */
+  .ml-4.space-y-1 {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left: none !important;
+  }
+
+  .ml-4 .block.px-3.py-2 {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Force minimal spacing for mobile menu */
+  .md\\:hidden .space-y-1>*+* {
+    margin-top: 0.25rem !important;
+  }
+
+  .md\\:hidden .space-y-0>*+* {
+    margin-top: 0 !important;
+  }
+
+  /* Override any remaining spacing */
+  .md\\:hidden div[class*="space-y"] {
+    gap: 0 !important;
+  }
+
+  .md\\:hidden .space-y-1 {
+    gap: 0.25rem !important;
+  }
+
+  /* Mobile hero section logo adjustments */
+  section img[alt*="ABWCI Logo"] {
+    max-width: 80px !important;
+    height: auto !important;
+  }
+
+  /* Mobile hero section community text */
+  div[style*="width: '173px'"] {
+    width: auto !important;
+    font-size: clamp(16px, 4vw, 24px) !important;
+  }
+
+  /* Mobile hero section separator */
+  div[style*="width: '9px'"] {
+    font-size: clamp(20px, 4vw, 28px) !important;
+  }
+
+  /* Mobile key features modal content */
+  .absolute.left-\[160px\] {
+    left: 1rem !important;
+    width: calc(100% - 2rem) !important;
+  }
+
+  .absolute.left-\[20px\] {
+    left: 1rem !important;
+  }
+
+  /* Mobile scrolling improvements */
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Mobile text selection */
+  * {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Mobile form elements */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+    /* Prevents zoom on iOS */
+  }
+
+  /* Body padding to account for fixed navbar */
+  body {
+    padding-top: 3rem !important;
+  }
+
+  /* Hero section specific mobile fixes - Full Width */
+  section[style*="height: 70vh"] {
+    height: 70vh !important;
+    min-height: 70vh !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Hero section content positioning - Full Width */
+  .relative.max-w-7xl.mx-auto.px-4.sm\\:px-6.lg\\:px-8 {
+    padding: 1rem !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Hero section text line height adjustments */
+  section h1 {
+    line-height: 1.2 !important;
+  }
+
+  /* Hero section button positioning */
+  section .text-center.mt-2 {
+    margin-top: 0.5rem !important;
+  }
+
+  /* Partner logos positioning */
+  .absolute.bottom-0.left-0.right-0 {
+    bottom: 0 !important;
+  }
+
+  /* Mobile hero section logo and community text */
+  section .flex.items-center.justify-center.gap-2.mb-3 {
+    margin-bottom: 1rem !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Mobile hero section logo sizing - Card Style */
+  section img[alt*="ABWCI Logo"] {
+    max-width: 50px !important;
+    height: auto !important;
+  }
+
+  /* Mobile hero section community text - Card Style */
+  div[style*="width: '173px'"] {
+    width: auto !important;
+    font-size: clamp(12px, 3vw, 16px) !important;
+  }
+
+  /* Mobile hero section separator - Card Style */
+  div[style*="width: '9px'"] {
+    font-size: clamp(14px, 3vw, 18px) !important;
+  }
+
+  /* Mobile button styling - Card Style */
+  .bg-\[#fecb07\] {
+    padding: 0.5rem 1rem !important;
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+    border-radius: 20px !important;
+    min-width: 120px !important;
+  }
+
+  /* Mobile responsive fixes for hero sections */
+
+  /* Mobile text alignment */
+  section .text-center {
+    text-align: center !important;
+  }
+
+  /* Mobile responsive fixes for all homepage sections */
+
+  /* Key Features Section Mobile */
+  .py-16.text-white {
+    padding: 2rem 0 !important;
+  }
+
+  /* Key Features title mobile */
+  h2[style*="fontSize: '42px'"] {
+    font-size: clamp(24px, 6vw, 42px) !important;
+    line-height: clamp(28px, 7vw, 45px) !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Key Features grid mobile */
+  .grid.grid-cols-1.md\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Key Features cards mobile */
+  .relative.rounded-2xl.overflow-hidden.h-72 {
+    height: 16rem !important;
+  }
+
+  /* Key Features card titles mobile */
+  .text-2xl.font-medium {
+    font-size: clamp(16px, 4vw, 24px) !important;
+    line-height: clamp(20px, 5vw, 28px) !important;
+  }
+
+  /* One Platform Section Mobile */
+  .py-20.bg-white {
+    padding: 3rem 0 !important;
+  }
+
+  /* One Platform title mobile */
+  h2[style*="fontSize: '50px'"] {
+    font-size: clamp(24px, 6vw, 50px) !important;
+    line-height: clamp(28px, 7vw, 51px) !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* One Platform description mobile */
+  p[style*="fontSize: '18px'"] {
+    font-size: clamp(14px, 3vw, 18px) !important;
+    line-height: clamp(18px, 4vw, 24px) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* One Platform grid mobile */
+  .grid.grid-cols-1.lg\\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* One Platform features mobile */
+  .space-y-6 {
+    gap: 1.5rem !important;
+  }
+
+  /* One Platform feature titles mobile */
+  h3[style*="fontSize: '20px'"] {
+    font-size: clamp(16px, 4vw, 20px) !important;
+    line-height: clamp(20px, 5vw, 24px) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* One Platform feature descriptions mobile */
+  p[style*="fontSize: '16px'"] {
+    font-size: clamp(12px, 3vw, 16px) !important;
+    line-height: clamp(16px, 4vw, 24px) !important;
+  }
+
+  /* Success Stories Section Mobile */
+  .py-20.bg-white {
+    padding: 3rem 0 !important;
+  }
+
+  /* Success Stories title mobile */
+  h2[style*="fontSize: '50px'"] {
+    font-size: clamp(24px, 6vw, 50px) !important;
+    line-height: clamp(28px, 7vw, 51px) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Success Stories subtitle mobile */
+  p[style*="fontSize: '18px'"] {
+    font-size: clamp(14px, 3vw, 18px) !important;
+    line-height: clamp(18px, 4vw, 24px) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Success Stories cards mobile */
+  .flex-shrink-0.w-96 {
+    width: 18rem !important;
+  }
+
+  /* Partnerships Section Mobile */
+  .py-20.bg-white {
+    padding: 3rem 0 !important;
+  }
+
+  /* Partnerships title mobile */
+  h2[style*="fontSize: '50px'"] {
+    font-size: clamp(24px, 6vw, 50px) !important;
+    line-height: clamp(28px, 7vw, 51px) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Partnerships subtitle mobile */
+  p[style*="fontSize: '18px'"] {
+    font-size: clamp(14px, 3vw, 18px) !important;
+    line-height: clamp(18px, 4vw, 24px) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Partnerships layout mobile */
+  .flex.items-center.justify-center.gap-8 {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  /* SDGs Section Mobile */
+  .py-20.bg-\[#fef7e7\] {
+    padding: 3rem 0 !important;
+  }
+
+  /* SDGs title mobile */
+  h2[style*="fontSize: '50px'"] {
+    font-size: clamp(24px, 6vw, 50px) !important;
+    line-height: clamp(28px, 7vw, 51px) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* SDGs grid mobile */
+  .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* SDGs cards mobile */
+  .w-56.h-56 {
+    width: 8rem !important;
+    height: 8rem !important;
+  }
+
+  /* SDGs card titles mobile */
+  h3[style*="fontSize: '20px'"] {
+    font-size: clamp(14px, 3vw, 20px) !important;
+    line-height: clamp(18px, 4vw, 24px) !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* SDGs card descriptions mobile */
+  p[style*="fontSize: '16px'"] {
+    font-size: clamp(12px, 2.5vw, 16px) !important;
+    line-height: clamp(16px, 3vw, 20px) !important;
+  }
+
+  /* FAQ Section Mobile */
+  .py-20.bg-\[#fef7e7\] {
+    padding: 3rem 0 !important;
+  }
+
+  /* FAQ title mobile */
+  h2[style*="fontSize: '50px'"] {
+    font-size: clamp(24px, 6vw, 50px) !important;
+    line-height: clamp(28px, 7vw, 51px) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* FAQ questions mobile */
+  h3[style*="fontSize: '16px'"] {
+    font-size: clamp(14px, 3vw, 16px) !important;
+    line-height: clamp(18px, 4vw, 20px) !important;
+    padding-right: 1rem !important;
+  }
+
+  /* FAQ answers mobile */
+  p[style*="fontSize: '14px'"] {
+    font-size: clamp(12px, 2.5vw, 14px) !important;
+    line-height: clamp(16px, 3vw, 18px) !important;
+  }
+
+  /* Global Presence Section Mobile */
+  .py-6.bg-white {
+    padding: 2rem 0 !important;
+  }
+
+  /* Global Presence title mobile */
+  h2[style*="fontSize: '50px'"] {
+    font-size: clamp(24px, 6vw, 50px) !important;
+    line-height: clamp(28px, 7vw, 51px) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Global Presence subtitle mobile */
+  p[style*="fontSize: '16px'"] {
+    font-size: clamp(12px, 3vw, 16px) !important;
+    line-height: clamp(16px, 4vw, 20px) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Global Presence layout mobile */
+  .flex.flex-col.lg\\:flex-row {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    text-align: center !important;
+  }
+
+  /* World map mobile */
+  .relative.w-full.h-96 {
+    height: 16rem !important;
+  }
+
+  /* Global Presence indicators mobile */
+  .flex.flex-wrap.justify-center.gap-8 {
+    gap: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Global Presence indicator text mobile */
+  span[style*="fontSize: '15px'"] {
+    font-size: clamp(12px, 2.5vw, 15px) !important;
+    line-height: clamp(16px, 3vw, 20px) !important;
+  }
+
+  /* Mobile spacing for all hero sections - Card Style */
+  section .relative.max-w-7xl.mx-auto.px-4 {
+    gap: 0.75rem !important;
+  }
+
+  /* Ensure all text elements are visible in Hero Section 1 */
+  section .text-white {
+    color: white !important;
+  }
+
+  /* Fix any hidden elements */
+  section .animate-on-scroll {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Show partner logos on mobile card */
+  .absolute.bottom-0.left-0.right-0 {
+    display: block !important;
+    opacity: 0.8 !important;
+  }
+
+  /* Expanded Nav Mobile Text Sizing */
+  .absolute.top-full.left-0.right-0.bg-white.shadow-lg {
+    padding: 1rem !important;
+  }
+
+  /* Expanded Nav headings - smaller on mobile */
+  .absolute.top-full.left-0.right-0 h3 {
+    font-size: clamp(12px, 2vw, 14px) !important;
+    line-height: clamp(14px, 2.5vw, 16px) !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Expanded Nav links - smaller on mobile */
+  .absolute.top-full.left-0.right-0 a {
+    font-size: clamp(10px, 1.8vw, 12px) !important;
+    line-height: clamp(12px, 2vw, 14px) !important;
+    padding: 0.25rem 0 !important;
+  }
+
+  /* Expanded Nav button - smaller on mobile */
+  .absolute.top-full.left-0.right-0 button {
+    font-size: clamp(10px, 1.8vw, 12px) !important;
+    line-height: clamp(12px, 2vw, 14px) !important;
+    padding: 0.25rem 0 !important;
+  }
+
+  /* Expanded Nav logo section - smaller on mobile */
+  .absolute.top-full.left-0.right-0 .w-24.h-24 {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  .absolute.top-full.left-0.right-0 .w-32.h-32 {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+
+  .absolute.top-full.left-0.right-0 .w-40.h-40 {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  /* Expanded Nav logo text - smaller on mobile */
+  .absolute.top-full.left-0.right-0 .text-gray-800.leading-tight {
+    font-size: clamp(8px, 1.5vw, 10px) !important;
+    line-height: clamp(10px, 2vw, 12px) !important;
+  }
+
+  /* Expanded Nav grid - adjust for mobile */
+  .absolute.top-full.left-0.right-0 .grid.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .absolute.top-full.left-0.right-0 .grid.grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .absolute.top-full.left-0.right-0 .grid.grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  .absolute.top-full.left-0.right-0 .grid.grid-cols-6 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Slightly reduce hero text sizes for tablets */
+  section h1[style*="fontSize: '56px'"] {
+    font-size: 42px !important;
+    line-height: 48px !important;
+  }
+
+  /* Adjust widths for tablets */
+  div[style*="width: '850px'"],
+  div[style*="width: '880px'"],
+  div[style*="width: '800px'"] {
+    width: 90% !important;
+    max-width: 700px !important;
+  }
 }

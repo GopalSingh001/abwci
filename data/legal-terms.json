@@ -1,0 +1,168 @@
+{
+  "termsAndConditions": {
+    "title": "Terms and Conditions",
+    "content": [
+      {
+        "text": "Welcome to the website of <strong>Association of Business Women in Commerce & Industry (ABWCI)</strong>. By accessing or using this website, you agree to comply with and be bound by the following Terms and Conditions."
+      },
+      {
+        "heading": "1. Use of Website",
+        "points": [
+          "This website is intended to provide information about ABWCI's initiatives, programs, memberships, and activities.",
+          "You agree to use the website only for lawful purposes and in a manner that does not infringe the rights of others or restrict their use of the website."
+        ]
+      },
+      {
+        "heading": "2. Intellectual Property",
+        "points": [
+          "All content on this website, including text, graphics, logos, images, and digital assets, is the property of ABWCI unless otherwise stated.",
+          "No content may be copied, reproduced, or distributed without prior written consent from ABWCI."
+        ]
+      },
+      {
+        "heading": "3. Membership & Services",
+        "points": [
+          "Any applications for membership, programs, or services are subject to ABWCI's internal eligibility criteria and approval processes.",
+          "ABWCI reserves the right to modify or discontinue any service without prior notice."
+        ]
+      },
+      {
+        "heading": "4. Donations",
+        "points": [
+          "Donations made through the website are voluntary and non-refundable unless required by law.",
+          "For foreign contributions, applicable regulations under FCRA and other laws shall apply."
+        ]
+      },
+      {
+        "heading": "5. Third-Party Links",
+        "points": [
+          "The website may contain links to third-party websites for convenience.",
+          "ABWCI is not responsible for the content, policies, or practices of such external websites."
+        ]
+      },
+      {
+        "heading": "6. Limitation of Liability",
+        "points": [
+          "ABWCI shall not be liable for any direct, indirect, or consequential damages arising from the use of this website."
+        ]
+      },
+      {
+        "heading": "7. Governing Law",
+        "points": [
+          "These Terms shall be governed by and construed in accordance with the laws of India.",
+          "ABWCI reserves the right to update these Terms at any time. Continued use of the website constitutes acceptance of the revised Terms."
+        ]
+      }
+    ]
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "content": [
+      {
+        "text": "ABWCI is committed to protecting the privacy and personal information of its users, members, donors, and partners."
+      },
+      {
+        "heading": "1. Information We Collect",
+        "text": "We may collect:",
+        "points": [
+          "Personal details (name, email, phone number, organization)",
+          "Membership or donation-related information",
+          "Website usage data (IP address, browser type, pages visited)"
+        ]
+      },
+      {
+        "heading": "2. Use of Information",
+        "text": "Collected information is used to:",
+        "points": [
+          "Provide services, programs, and communications",
+          "Process memberships and donations",
+          "Improve website functionality and user experience",
+          "Comply with legal and regulatory requirements"
+        ]
+      },
+      {
+        "heading": "3. Data Sharing",
+        "points": [
+          "ABWCI does not sell or rent personal data to third parties.",
+          "Information may be shared with service providers strictly for operational purposes or where legally required."
+        ]
+      },
+      {
+        "heading": "4. Data Security",
+        "points": [
+          "Reasonable administrative and technical safeguards are implemented to protect personal data from unauthorized access or misuse."
+        ]
+      },
+      {
+        "heading": "5. Cookies",
+        "points": [
+          "The website may use cookies to enhance user experience and analyze traffic patterns.",
+          "Users may disable cookies through browser settings."
+        ]
+      },
+      {
+        "heading": "6. Your Rights",
+        "points": [
+          "You may request access, correction, or deletion of your personal data by contacting ABWCI."
+        ]
+      },
+      {
+        "heading": "7. Policy Updates",
+        "points": [
+          "This Privacy Policy may be updated periodically. Any changes will be posted here."
+        ]
+      }
+    ]
+  },
+  "compliancePolicy": {
+    "title": "Compliance Policy",
+    "content": [
+      {
+        "text": "ABWCI is committed to maintaining the highest standards of legal, ethical, and regulatory compliance across all its operations."
+      },
+      {
+        "heading": "1. Regulatory Compliance",
+        "text": "ABWCI complies with all applicable Indian and international laws, including but not limited to:",
+        "points": [
+          "Societies / Trust regulations",
+          "Income Tax Act (12A / 12AB, 80G)",
+          "Foreign Contribution Regulation Act (FCRA), where applicable"
+        ]
+      },
+      {
+        "heading": "2. Financial Transparency",
+        "points": [
+          "All funds received are used strictly for approved objectives and programs.",
+          "Financial records are maintained accurately and audited periodically by qualified auditors."
+        ]
+      },
+      {
+        "heading": "3. Ethical Conduct",
+        "points": [
+          "ABWCI promotes integrity, accountability, and fairness in all activities.",
+          "Conflicts of interest are disclosed and managed appropriately."
+        ]
+      },
+      {
+        "heading": "4. Anti-Fraud & Misuse",
+        "points": [
+          "Any misuse of funds, misrepresentation, or unethical conduct is subject to strict internal review and corrective action."
+        ]
+      },
+      {
+        "heading": "5. Data & Information Compliance",
+        "points": [
+          "Personal and organizational data is handled in line with applicable data protection and privacy regulations."
+        ]
+      },
+      {
+        "heading": "6. Reporting & Oversight",
+        "points": [
+          "Governing Body oversight ensures compliance with statutory, financial, and operational obligations.",
+          "ABWCI reserves the right to amend this Compliance Policy to reflect regulatory or operational changes."
+        ]
+      }
+    ]
+  }
+}
+
