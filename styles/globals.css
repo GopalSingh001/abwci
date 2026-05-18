@@ -522,8 +522,8 @@ a {
     z-index: 20 !important;
   }
 
-  /* Fix Hero Section 1 main container */
-  section .relative.max-w-7xl.mx-auto.px-4.sm\\:px-6.lg\\:px-8 {
+  /* Fix Hero Section 1 main container - FIXED: removed escaped classes */
+  section .relative.max-w-7xl.mx-auto.px-4 {
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
@@ -635,15 +635,15 @@ a {
     line-height: clamp(20px, 4vw, 22px) !important;
   }
 
-  /* Vision/Mission columns */
-  .flex.flex-col.md\\:flex-row.gap-8 {
+  /* Vision/Mission columns - FIXED: removed escaped classes, using attribute selector */
+  [class~="flex"][class~="flex-col"][class~="gap-8"] {
     flex-direction: column !important;
     gap: 1.5rem !important;
     padding-left: 0 !important;
   }
 
-  /* Key Features Section Mobile */
-  .grid.grid-cols-1.md\\:grid-cols-3 {
+  /* Key Features Section Mobile - FIXED: removed escaped classes, using attribute selector */
+  [class~="grid"][class~="grid-cols-1"] {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
@@ -668,8 +668,9 @@ a {
     margin: 1rem !important;
   }
 
-  /* One Platform Section Mobile */
-  .grid.grid-cols-1.lg\\:grid-cols-2 {
+  /* One Platform Section Mobile - FIXED: removed escaped classes, using attribute selector */
+  [class~="grid"][class~="grid-cols-1"][class~="lg\\:grid-cols-2"],
+  [class~="grid"][class~="grid-cols-1"][class*="lg:grid-cols-2"] {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
@@ -696,8 +697,13 @@ a {
     width: 18rem !important;
   }
 
-  /* SDGs Section Mobile */
-  .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 {
+  /* SDGs Section Mobile - FIXED: removed escaped classes, using attribute selectors */
+  [class~="grid"][class~="grid-cols-1"][class*="grid-cols-2"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  [class~="grid"][class~="grid-cols-1"][class*="grid-cols-4"] {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem !important;
   }
@@ -714,8 +720,8 @@ a {
     line-height: clamp(22px, 5vw, 28px) !important;
   }
 
-  /* Global Presence Mobile */
-  .flex.flex-col.lg\\:flex-row {
+  /* Global Presence Mobile - FIXED: removed escaped classes, using attribute selector */
+  [class~="flex"][class~="flex-col"] {
     flex-direction: column !important;
     gap: 1rem !important;
     text-align: center !important;
@@ -801,8 +807,8 @@ a {
     z-index: 1000 !important;
   }
 
-  /* Hide desktop navigation on mobile */
-  .md\\:flex.items-center.justify-center.flex-1 {
+  /* Hide desktop navigation on mobile - FIXED: removed escaped classes */
+  [class~="flex"][class~="items-center"][class~="justify-center"][class~="flex-1"] {
     display: none !important;
   }
 
@@ -811,8 +817,8 @@ a {
     display: none !important;
   }
 
-  /* Ensure logo container is visible on mobile */
-  .flex.items-center.ml-1.sm\\:ml-2.md\\:ml-3.lg\\:ml-4 {
+  /* Ensure logo container is visible on mobile - FIXED: removed escaped classes */
+  [class~="flex"][class~="items-center"][class~="ml-1"] {
     display: flex !important;
   }
 
@@ -842,22 +848,22 @@ a {
     height: 1.5rem !important;
   }
 
-  /* Mobile layout container - ensure proper flex layout */
-  .flex.items-center.justify-between.w-full.md\\:hidden {
+  /* Mobile layout container - ensure proper flex layout - FIXED: removed escaped classes */
+  [class~="flex"][class~="items-center"][class~="justify-between"][class~="w-full"] {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
   }
 
-  /* Mobile logo - force to left */
-  .flex.items-center.justify-between.w-full.md\\:hidden>div:first-child {
+  /* Mobile logo - force to left - FIXED: using simpler selector */
+  .flex.items-center.justify-between.w-full>div:first-child {
     order: 1 !important;
     margin-right: auto !important;
   }
 
-  /* Mobile hamburger menu - force to right */
-  .flex.items-center.justify-between.w-full.md\\:hidden>div:last-child {
+  /* Mobile hamburger menu - force to right - FIXED: using simpler selector */
+  .flex.items-center.justify-between.w-full>div:last-child {
     order: 2 !important;
     margin-left: auto !important;
   }
@@ -867,8 +873,8 @@ a {
     display: none !important;
   }
 
-  /* Mobile menu styling - Ultra Compact */
-  .md\\:hidden.bg-white.shadow-lg.border-t {
+  /* Mobile menu styling - Ultra Compact - FIXED: removed escaped classes */
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] {
     margin-top: 3rem !important;
     border-top: 1px solid #e5e7eb !important;
     max-height: 60vh !important;
@@ -876,29 +882,29 @@ a {
 
 
   /* Force minimal spacing on all mobile menu elements */
-  .md\\:hidden div {
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] div {
     margin: 0 !important;
     padding: 0 !important;
   }
 
-  .md\\:hidden h3 {
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] h3 {
     margin: 0 !important;
     padding: 0 !important;
     margin-bottom: 0.25rem !important;
   }
 
-  .md\\:hidden a {
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] a {
     margin: 0 !important;
     padding: 0 !important;
     line-height: 1.2 !important;
   }
 
   /* Override all spacing classes */
-  .md\\:hidden .space-y-1>*+* {
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] .space-y-1>*+* {
     margin-top: 0.25rem !important;
   }
 
-  .md\\:hidden .space-y-0>*+* {
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] .space-y-0>*+* {
     margin-top: 0 !important;
   }
 
@@ -916,21 +922,21 @@ a {
     font-size: 0.875rem !important;
   }
 
-  /* Force minimal spacing for mobile menu */
-  .md\\:hidden .space-y-1>*+* {
+  /* Force minimal spacing for mobile menu - FIXED: removed escaped classes */
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] .space-y-1>*+* {
     margin-top: 0.25rem !important;
   }
 
-  .md\\:hidden .space-y-0>*+* {
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] .space-y-0>*+* {
     margin-top: 0 !important;
   }
 
   /* Override any remaining spacing */
-  .md\\:hidden div[class*="space-y"] {
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] div[class*="space-y"] {
     gap: 0 !important;
   }
 
-  .md\\:hidden .space-y-1 {
+  [class~="bg-white"][class~="shadow-lg"][class~="border-t"] .space-y-1 {
     gap: 0.25rem !important;
   }
 
@@ -997,8 +1003,8 @@ a {
     margin-right: 0 !important;
   }
 
-  /* Hero section content positioning - Full Width */
-  .relative.max-w-7xl.mx-auto.px-4.sm\\:px-6.lg\\:px-8 {
+  /* Hero section content positioning - Full Width - FIXED: removed escaped classes */
+  .relative.max-w-7xl.mx-auto.px-4 {
     padding: 1rem !important;
     height: 100% !important;
     display: flex !important;
@@ -1074,8 +1080,8 @@ a {
     margin-bottom: 1.5rem !important;
   }
 
-  /* Key Features grid mobile */
-  .grid.grid-cols-1.md\\:grid-cols-3 {
+  /* Key Features grid mobile - FIXED: removed escaped classes */
+  [class~="grid"][class~="grid-cols-1"] {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }
@@ -1110,8 +1116,8 @@ a {
     margin-bottom: 2rem !important;
   }
 
-  /* One Platform grid mobile */
-  .grid.grid-cols-1.lg\\:grid-cols-2 {
+  /* One Platform grid mobile - FIXED: removed escaped classes */
+  [class~="grid"][class~="grid-cols-1"] {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
@@ -1195,8 +1201,8 @@ a {
     margin-bottom: 2rem !important;
   }
 
-  /* SDGs grid mobile */
-  .grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 {
+  /* SDGs grid mobile - FIXED: removed escaped classes */
+  [class~="grid"][class~="grid-cols-1"] {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem !important;
   }
@@ -1264,8 +1270,8 @@ a {
     margin-bottom: 1rem !important;
   }
 
-  /* Global Presence layout mobile */
-  .flex.flex-col.lg\\:flex-row {
+  /* Global Presence layout mobile - FIXED: removed escaped classes */
+  [class~="flex"][class~="flex-col"] {
     flex-direction: column !important;
     gap: 1rem !important;
     text-align: center !important;

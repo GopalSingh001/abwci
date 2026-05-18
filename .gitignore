@@ -76,3 +76,5 @@ assets-demo/
 
 # Python config
 /postgres_config.py
+
+.deploy.zip
